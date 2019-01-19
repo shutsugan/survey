@@ -7,7 +7,7 @@ const keys = require('./config/keys');
 require('./models/user');
 require('./services/passport');
 
-mongoose.connect(keys.mongoDbURI);
+mongoose.connect(keys.mongoDbURI, {useNewUrlParser: true});
 
 const PORT = process.env.PORT || 5000;
 const app = express();
