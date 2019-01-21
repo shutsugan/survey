@@ -1,5 +1,5 @@
 export default (state = {}, {type, payload}) => {
-	switch(type) {
+	switch (type) {
 		default: return state;
 	}
 }
