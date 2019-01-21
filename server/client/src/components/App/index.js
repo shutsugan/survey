@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -7,9 +7,9 @@ import Head from '../Head';
 
 import './index.css';
 
-const DashBoard = _ => (<h2>DashBoard</h2>);
-const ServyNew = _ => (<h2>ServyNew</h2>);
-const Landing = _ => (<h2>Landing</h2>);
+const DashBoard = lazy(_ => import('../DashBoard'));
+const ServyNew = lazy(_ => import('../ServyNew'));
+const Landing = lazy(_ => import('../Landing'));
 
 const App = ({fetchUser}) => {
 	useEffect(_ => {
@@ -19,12 +19,12 @@ const App = ({fetchUser}) => {
 	return (
 		<div>
 			<BrowserRouter>
-				<Fragment>
+				<Suspense fallback={<div>Loading...</div>}>
 					<Head />
 					<Route exact path="/" component={Landing} />
 					<Route exact path="/servys" component={DashBoard} />
 					<Route path="/servys/new" component={ServyNew} />
-				</Fragment>
+				</Suspense>
 			</BrowserRouter>
 		</div>
 	);
