@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import * as actions from '../../actions';
 import Head from '../Head';
 
 import './index.css';
@@ -9,7 +11,11 @@ const DashBoard = _ => (<h2>DashBoard</h2>);
 const ServyNew = _ => (<h2>ServyNew</h2>);
 const Landing = _ => (<h2>Landing</h2>);
 
-const App = _ => {
+const App = ({fetchUser}) => {
+	useEffect(_ => {
+		fetchUser();
+	});
+
 	return (
 		<div>
 			<BrowserRouter>
@@ -24,4 +30,4 @@ const App = _ => {
 	);
 };
 
-export default App;
+export default connect(null, actions)(App);
