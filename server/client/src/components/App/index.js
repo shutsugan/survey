@@ -21,9 +21,9 @@ const App = ({fetchUser}) => {
 			<BrowserRouter>
 				<Suspense fallback={<div>Loading...</div>}>
 					<Head />
-					<Route exact path="/" component={Landing} />
-					<Route exact path="/servys" component={DashBoard} />
-					<Route path="/servys/new" component={ServyNew} />
+					<Route exact path="/" render={_ => <Landing />} />
+					<Route exact path="/servys" render={_ => <DashBoard />} />
+					<Route path="/servys/new" render={_ => <ServyNew />} />
 				</Suspense>
 			</BrowserRouter>
 		</div>
