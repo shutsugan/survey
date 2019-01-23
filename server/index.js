@@ -26,4 +26,11 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 
+if (process.env.NODE_ENV) {
+	app.use(express.statis('client/build'));
+
+	const path = require('path');
+	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+}
+
 app.listen(PORT, _ => console.log('Running on 5000...'));
