@@ -23,3 +23,15 @@
 	justify-content: flex-end;
 	align-items: center;
 }
+
+.credits {
+	height: 20px;
+  line-height: 13px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background: #4caf50;
+  color: #fff;
+  font-size: .7rem;
+	text-transform: uppercase;
+  text-align: center;
+}

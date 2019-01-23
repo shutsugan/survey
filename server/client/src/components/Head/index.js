@@ -11,7 +11,11 @@ const Head = ({auth}) => {
 	const nav_button = auth === null
 		? ''
 		: auth
-			? <><Payment /><Button path="/api/logout/" name="Logout" /></>
+			? <>
+					<Payment />
+					<Button path="/api/logout/" name="Logout" />
+					<span className="credits">Credits: {auth.credits}</span>
+				</>
 			: <Button path="/auth/google/" name="Sigin with google" />;
 
 	return (
