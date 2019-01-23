@@ -29,8 +29,10 @@ require('./routes/billingRoutes')(app);
 if (process.env.NODE_ENV) {
 	app.use(express.static('client/build'));
 
-	const path = require('path');
-	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+	app.get('/*', (req, res) => {
+		const path = require('path');
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+	})
 }
 
 app.listen(PORT, _ => console.log('Running on 5000...'));
