@@ -6,6 +6,7 @@ const passport = require('passport');
 
 const keys = require('./config/keys');
 require('./models/user');
+require('./models/servy');
 require('./services/passport');
 
 mongoose.connect(keys.mongoDbURI, {useNewUrlParser: true});
@@ -25,6 +26,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/servyRoutes')(app);
 
 if (process.env.NODE_ENV) {
 	app.use(express.static('client/build'));
