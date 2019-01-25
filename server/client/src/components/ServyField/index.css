@@ -1,0 +1,18 @@
+.servy-field {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 16px;
+}
+
+.servy-field__input {
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  transition: .2s ease-out;
+}
+
+.servy-field__input:focus {
+  border-bottom: 1px solid #aaa;
+}

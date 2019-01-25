@@ -1,10 +1,12 @@
 import React from 'react';
 
+import ServyForm from '../ServyForm';
+
 import './index.css';
 
 const ServyNew = _ => (
 	<div className="servy-new">
-		<h2>Add Servy Page</h2>
+		<ServyForm />
 	</div>
 );
 
