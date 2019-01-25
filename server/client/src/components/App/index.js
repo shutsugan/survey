@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
 import Head from '../Head';
+import Fab from '../Fab';
 
 import './index.css';
 
@@ -24,6 +25,7 @@ const App = ({fetchUser}) => {
 					<Route exact path="/" render={_ => <Landing />} />
 					<Route exact path="/servys" render={_ => <DashBoard />} />
 					<Route path="/servys/new" render={_ => <ServyNew />} />
+					<Fab path="/servys/new" />
 				</Suspense>
 			</BrowserRouter>
 		</div>
