@@ -11,3 +11,10 @@ export const handleToken = token => async dispatch => {
 	const {data} = await axios.post('/api/stripe', token);
 	dispatch({type: FETCH_USER, payload: data});
 };
+
+export const submitServy = (values, history) => async dispatch => {
+	const {data} = await axios.post('/api/servys', values);
+
+	history.push('/servys');
+	dispatch({type: FETCH_USER, payload: data});
+}

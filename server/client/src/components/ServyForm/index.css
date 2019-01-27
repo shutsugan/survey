@@ -23,6 +23,14 @@
   padding: 16px;
 }
 
+.servy-form__button-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .servy-form__button {
   border: none;
   background: #000;

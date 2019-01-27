@@ -6,6 +6,12 @@
   margin-bottom: 16px;
 }
 
+.servy-field__label {
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: bold;
+}
+
 .servy-field__input {
   padding: 8px;
   border: none;

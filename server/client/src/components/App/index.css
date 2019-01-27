@@ -51,3 +51,10 @@ span {
 	background: #e49e00;
 	color: #fff;
 }
+
+.error {
+	color: #ef0504;
+	margin-top: 8px;
+	margin-bottom: 16px;
+	font-size: .8rem;
+}
