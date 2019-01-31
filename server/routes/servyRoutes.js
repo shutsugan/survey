@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Path = require('path-parser').default;
+const { URL } = require('url');
 const requireLogin = require('../middlewares/requireLogin');
 const requireCredits = require('../middlewares/requireCredits');
 const template = require('../services/emailTemplates/servyTemplate');
@@ -7,7 +9,39 @@ const Mailer = require('../services/Mailer');
 const Servy = mongoose.model('servys');
 
 module.exports = app => {
-  app.get('/api/servys/thanks', (req, res) => res.send('Thank you for your time!'));
+  app.get('/api/servys/:servyId/:choice', (req, res) => res.send('Thank you for your time!'));
+
+  app.post('/api/servys/webhooks', ({body}, res) => {
+    const events = body
+      .map(({url, email}) => {
+        const pathname = new URL(url).pathname;
+        const p = new Path('/api/servys/:servyId/:choice');
+        const match = p.test(pathname);
+
+        if (match) return {email, ...match};
+      })
+      .filter(event => {
+        if (event) return event;
+      });
+
+      const filtered_events = [...new Set(events.map(event => JSON.stringify(event)))]
+        .map(event => JSON.parse(event));
+
+        filtered_events.forEach(({servyId, email, choice}) => {
+          Servy.updateOne({
+            _id: servyId,
+            recipients: {
+              $elemMatch: {email: email, responded: false}
+            }
+          }, {
+            $inc: {[choice]: 1},
+            $set: {'recipients.$.responded': true},
+            lastResponded: new Date()
+          }).exec();
+        });
+
+      res.send({});
+  });
 
   app.post('/api/servys', requireLogin, requireCredits, async (req, res) => {
     const {title, subject, body, recipients} = req.body;
