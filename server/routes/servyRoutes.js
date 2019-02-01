@@ -9,6 +9,13 @@ const Mailer = require('../services/Mailer');
 const Servy = mongoose.model('servys');
 
 module.exports = app => {
+  app.get('/api/servys', requireLogin, async ({user}, res) => {
+      const servys = await Servy.find({_user: user.id})
+        .select({recipients: false});
+
+      res.send(servys);
+  });
+
   app.get('/api/servys/:servyId/:choice', (req, res) => res.send('Thank you for your time!'));
 
   app.post('/api/servys/webhooks', ({body}, res) => {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { FETCH_USER } from './types';
+import { FETCH_USER, FETCH_SERVYS } from './types';
 
 export const fetchUser = _ => async dispatch => {
 	const {data} = await axios.get('/api/current_user');
@@ -17,4 +17,9 @@ export const submitServy = (values, history) => async dispatch => {
 
 	history.push('/servys');
 	dispatch({type: FETCH_USER, payload: data});
+}
+
+export const fetchServys = _ => async dispatch => {
+	const {data} = await axios.get('/api/servys');
+	dispatch({type: FETCH_SERVYS, payload: data});
 }
