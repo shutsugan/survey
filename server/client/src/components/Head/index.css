@@ -10,7 +10,7 @@
 }
 
 .logo {
-	font-size: calc(20px + 2vmin);
+	font-size: calc(5px + 2vmin);
 	font-weight: bold;
 	text-transform: uppercase;
 	color: #fff;
@@ -28,10 +28,11 @@
 	height: 20px;
   line-height: 13px;
   padding: 4px 8px;
-  border-radius: 5px;
+  border-radius: 2px;
   background: #4caf50;
   color: #fff;
-  font-size: .7rem;
-	text-transform: uppercase;
+  font-size: .6rem;
+  font-weight: bold;
+  text-transform: uppercase;
   text-align: center;
 }
