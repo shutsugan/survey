@@ -22,9 +22,6 @@ const ServyList = ({servys, fetchServys}) => {
   );
 };
 
-const mapStateToProps = ({servys}) => {
-  console.log(servys);
-  return {servys};
-}
+const mapStateToProps = ({servys}) => ({servys});
 
 export default connect(mapStateToProps, actions)(ServyList);
