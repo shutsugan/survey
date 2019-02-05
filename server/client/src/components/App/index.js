@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import Head from '../Head';
 import Fab from '../Fab';
+import Loading from '../Loading';
 
 import './index.css';
 
@@ -20,7 +21,7 @@ const App = ({fetchUser}) => {
 	return (
 		<div>
 			<BrowserRouter>
-				<Suspense fallback={<div>Loading...</div>}>
+				<Suspense fallback={<Loading />}>
 					<Head />
 					<Route exact path="/" render={_ => <Landing />} />
 					<Route exact path="/servys" render={_ => <DashBoard />} />
