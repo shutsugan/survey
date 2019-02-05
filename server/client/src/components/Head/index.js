@@ -19,7 +19,7 @@ const Head = ({auth}) => {
 			: <Button path="/auth/google/" name="Sigin with google" />;
 
 	return (
-		<header className="head">
+		<header className="head flex">
 			<Link
 				to={auth ? '/servys' : '/'}
 				className="logo">

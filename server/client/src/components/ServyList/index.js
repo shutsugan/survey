@@ -16,7 +16,7 @@ const ServyList = ({servys, fetchServys}) => {
     .map(servy => <Servy key={servy._id} servy={servy} />);
 
   return (
-    <div className="servy-list">
+    <div className="servy-list full flex flex-column flex-center">
       {servyList}
     </div>
   );

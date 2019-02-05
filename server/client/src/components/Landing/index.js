@@ -1,11 +1,9 @@
 import React from 'react';
 
+import Hero from '../Hero';
+
 import './index.css';
 
-const Landing = _ => (
-	<div className="landing">
-		<h2>Landing Page</h2>
-	</div>
-);
+const Landing = _ => <div className="landing flex flex-center"><Hero /></div>;
 
 export default Landing;

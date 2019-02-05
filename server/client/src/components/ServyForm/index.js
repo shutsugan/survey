@@ -32,16 +32,16 @@ const validate = values => {
 //handleSubmit
 const ServyForm = ({handleSubmit, handleReview}) => {
   return (
-    <div className="servy-form">
-      <h2 className="servy-form__title">Add a new servy</h2>
+    <div className="servy-form full flex flex-column">
+      <h2 className="page-title mr-lf">Add a new servy</h2>
       <form
-        className="servy-form__form"
+        className="servy-form__form flex flex-column flex-center"
         onSubmit={handleSubmit(values => handleReview(values))}>
 
         {fields}
-        <div className="servy-form__button-wrapper">
-          <Link className="servy-form__button" to="/servys">Cancel</Link>
-          <button className="servy-form__button" type="submit">Send</button>
+        <div className="servy-form__button-wrapper flex">
+          <Link className="button" to="/servys">Cancel</Link>
+          <button className="button" type="submit">Send</button>
         </div>
       </form>
     </div>

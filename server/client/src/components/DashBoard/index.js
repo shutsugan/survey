@@ -5,8 +5,8 @@ import ServyList from '../ServyList';
 import './index.css';
 
 const DashBoard = _ => (
-	<div className="dashboard">
-		<h2>DashBoard Page</h2>
+	<div className="dashboard flex flex-column">
+		<h2 className="page-title mr-lf">DashBoard Page</h2>
 		<ServyList />
 	</div>
 );

@@ -10,13 +10,11 @@ const ServyNew = _ => {
 	const [review, setReview] = useState(false);
 	const toggleReview = _ => setReview(!review);
 
-	const renderContent =  review
+	const renderContent = review
 		 	? <ServyReview handleReview={toggleReview} />
 		  : <ServyForm handleReview={toggleReview} />;
 
-	return (
-		<div className="servy-new">{renderContent}</div>
-	);
+	return <div className="servy-new">{renderContent}</div>;
 };
 
 export default reduxForm({

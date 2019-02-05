@@ -24,6 +24,28 @@ span {
 	display: flex;
 }
 
+.full {
+	width: 100%;
+  height: auto;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.flex-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.align-center {
+	text-align: center;
+}
+
 .button {
 	border: none;
   background: #000;
@@ -50,6 +72,31 @@ span {
 .error {
 	color: #ef0504;
 	margin-top: 8px;
+	font-size: .8rem;
+}
+
+.page-title {
+	font-size: calc(8px + 2vmin);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mr-lf {
+	margin-left: 16px;
+}
+
+.mr-bt {
 	margin-bottom: 16px;
+}
+
+.mr-none {
+	  margin: 0;
+}
+
+.pd-card {
+  padding: 16px;
+}
+
+.font-s {
 	font-size: .8rem;
 }

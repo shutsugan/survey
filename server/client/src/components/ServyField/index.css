@@ -1,19 +1,11 @@
-.servy-field {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-flow: column;
-  margin-bottom: 16px;
-}
-
 .servy-field__label {
   text-transform: uppercase;
-  font-size: .9rem;
+  font-size: .6rem;
   font-weight: bold;
 }
 
 .servy-field__input {
-  padding: 8px;
+  padding: 8px 0;
   border: none;
   border-bottom: 1px solid #ddd;
   transition: .2s ease-out;

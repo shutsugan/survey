@@ -1,10 +1,28 @@
 .servy {
   width: 80%;
   height: auto;
-  display: flex;
-  flex-flow: column;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .2), 0 1px 3px rgba(0, 0, 0, .3);
-  border-radius: 4px;
-  margin-bottom: 16px;
-  padding: 16px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.servy__title {
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.servy__date {
+  font-size: .8rem;
+}
+
+.servy__vote {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-size: .7rem;
+  font-weight: bold;
+  padding: 6px;
+  border-radius: 2px;
+  background: #ddd;
 }
